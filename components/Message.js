@@ -26,7 +26,11 @@ function Message({user,message}) {
 export default Message;
 
 
-const Container = styled.div``;
+const Container = styled.div`
+    z-index: 100;
+    width: 100%;
+
+`;
 
 const MessageElement = styled.p`
 

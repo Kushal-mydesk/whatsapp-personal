@@ -50,8 +50,8 @@ function Sidebar() {
    
     return (
     
-    <Container>
-        <Header>
+    <Container >
+        <Header className="mx-auto rounded-lg lg:max-w-6xl md:max-w-sm overflow-hidden smx:max-w-15px">
             {/*<UserAvater src={user.photoURL} onClick={() => auth.signOut()} />*/}
             {user ? (
             <UserAvater src={user?.photoURL} sx={{ width: 60, height: 60 }} onClick={() => auth.signOut()}/>
@@ -75,7 +75,7 @@ function Sidebar() {
         <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
 
         {/* List of chats*/}
-        <ChatContainer >
+        <ChatContainer className="mx-auto rounded-lg lg:max-w-6xl md:max-w-sm overflow-hidden smx:max-w-1" >
             {chatsSnappshot?.docs.map((chat) => (
                 <Chat key={chat.id} id = {chat.id} users={chat.data().users}>
 
@@ -169,16 +169,13 @@ const Container = styled.div`
     flex: 0.45;
     border-right: 1px sold whitesmoke;
     height: 100vh ;
-    min-width: 150px;
-    max-width: 350px;
-    overflow-y : scroll;
+    width: 90%;
+    box-shadow:  0 10px 15px rgba(0, 0, 0, 0.5);
+    
+    margin: 0 7% auto;
+    overflow-x : scroll;
 
-    ::-webkit-scrollbar{
-        display: none;
-    }
-
-    -ms-overflow-style: none;
-    scrollbar-width : none;
+   
 `;
 
 
